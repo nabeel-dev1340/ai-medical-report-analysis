@@ -12,7 +12,13 @@ const LandingPage = () => {
 
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];
-    const allowedTypes = ["image/png", "image/jpeg", "application/pdf"];
+    const allowedTypes = [
+      "image/png",
+      "image/jpeg",
+      "application/pdf",
+      "image/jpg", // Explicitly adding jpg
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document", // Example: Word docs
+    ];
 
     if (selectedFile && allowedTypes.includes(selectedFile.type)) {
       setFile(selectedFile);
@@ -69,15 +75,19 @@ const LandingPage = () => {
             </p>
           </div>
 
-          {/* Upload Section */}
-          <div id="upload-section" className="flex flex-col items-center">
+           {/* Upload Section */}
+          <div id="upload-section" className="flex flex-col items-center space-y-4">
             <FileUpload onFileChange={handleFileChange} error={error} />
+            <p className="text-sm text-gray-500">
+              Supported file types: <span className="font-semibold">PDF, PNG, JPG, DOCX</span>
+            </p>
             <button
               onClick={handleUpload}
               className="bg-blue-600 text-white font-semibold py-3 px-6 rounded-md hover:bg-blue-700 transition ease-in-out duration-300"
             >
               Upload and Analyse
             </button>
+            {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
           </div>
 
           {/* Benefits Section */}
