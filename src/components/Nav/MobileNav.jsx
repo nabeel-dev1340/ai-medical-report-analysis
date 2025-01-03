@@ -19,7 +19,7 @@ const MobileNav = ({ isOpen }) => {
           Contact
         </NavLink>
         <NavLink href="/signin" variant="mobile">
-          Sign In
+          Log In
         </NavLink>
       </div>
     </div>

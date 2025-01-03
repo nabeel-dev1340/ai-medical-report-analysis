@@ -10,7 +10,7 @@ const Footer = () => {
         <p className="text-sm">
           &copy; {new Date().getFullYear()} MedAI. All rights reserved.
         </p>
-        <div className="mt-4 text-sm">
+        <div className="mt-2 text-sm">
           <Link href="/terms" className="hover:text-gray-300 transition-colors">
             Terms of Service
           </Link>

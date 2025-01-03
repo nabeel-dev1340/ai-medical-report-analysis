@@ -10,7 +10,7 @@ const DesktopNav = () => {
       <NavLink href="/about">About</NavLink>
       <NavLink href="/contact">Contact</NavLink>
       <NavLink href="/signin" variant="button">
-        Sign In
+        Log In
       </NavLink>
     </nav>
   );
